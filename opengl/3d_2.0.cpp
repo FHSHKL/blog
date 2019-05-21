@@ -1,9 +1,12 @@
+#define GLUT_DISABLE_ATEXIT_HACK
+#include <windows.h>
 #include <GL/glut.h>
+#include <iostream>
+#include <cstring>
 #include <math.h>
 #include <cstdio>
-int min(int a,int b){
-	return a<b?a:b;
-}
+#include <map>
+int min(int a,int b){return a<b?a:b;}
 float col_l[3],col_p[3];
 void draw(float x1,float y1,float z1,float x2,float y2,float z2){
 	glColor3f(col_p[0],col_p[1],col_p[2]);
@@ -88,7 +91,29 @@ struct Cft{
 	float x1,x2,y1,y2,z1,z2;
 }cft[10000];
 int cnt=2;
-void display(){
+using namespace std;
+map< double,double >__cos;
+map< double,double >__sin;
+double _cos(double ss)
+{
+	if(!__cos[ss])
+	{
+		__cos[ss]=cos(ss);
+	}
+	return __cos[ss];
+}
+double _sin(double ss)
+{
+	if(!__sin[ss])
+	{
+		__sin[ss]=sin(ss);
+	}
+	return __sin[ss];
+}
+#define sin _sin
+#define cos _cos
+void display()
+{
     gluPerspective(60.0, 1.0, 0.01, 20.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -96,15 +121,17 @@ void display(){
 	now_x+cos(see_ping)*sin(see_h),now_y+cos(see_h),now_z+sin(see_ping)*sin(see_h),
 	cos(see_ping)*sin(see_h-M_PI/2),cos(see_h-M_PI/2),sin(see_ping)*sin(see_h-M_PI/2));
     glClear(GL_COLOR_BUFFER_BIT |GL_DEPTH_BUFFER_BIT);
-    for(int i=0;i<cnt;++i){
+    for(int i=0;i<cnt;++i)
+	{
     	draw(cft[i].x1,cft[i].y1,cft[i].z1,cft[i].x2,cft[i].y2,cft[i].z2);
 	}
     glFlush();
 }
 int xx,yy;
-void motion(int x,int y){
+void motion(int x,int y)
+{
     see_h+=(yy-y)*1.1/glutGet(GLUT_WINDOW_HEIGHT);
-    see_ping-=(x-xx)*1.1/glutGet(GLUT_WINDOW_WIDTH);
+    see_ping+=(xx-x)*1.1/glutGet(GLUT_WINDOW_WIDTH);
     xx=x;
     yy=y;
     display();
