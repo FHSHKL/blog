@@ -15,8 +15,6 @@ window.onload=function()
     document.body.appendChild(log);
     for(var i=0;i<login.length;i++)
     {
-        console.log(login);
-        console.log(login[i]);
         login[i].setAttribute('onkeypress','log(event)');
     }
 }
