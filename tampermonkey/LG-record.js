@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         洛谷-check-record
 // @version      1.0
-// @description  洛谷登录页面回车登录
+// @description  洛谷个人主页界面查看提交记录
 // @author       Fire Humans Skeleton
 // @match        https://www.luogu.org/space/show?*
 // @grant        none
