@@ -15,7 +15,8 @@ window.onload=function()
     var but=document.createElement("a");
     but.setAttribute("href","https://www.luogu.org/recordnew/lists?uid="+uid);
     but.setAttribute("class","am-btn am-btn-sm am-btn-primary");
-    but.innerHTML="TA的提交记录";
+    but.setAttribute("target=","_blank");
+    but.innerHTML="TA的提交";
 
     ybt[0].parentNode.appendChild(but);
 }
