@@ -42,7 +42,7 @@ function LG_record()
 
 function get_new(nurl)
 {
-    if(nurl=="www.luogu.org/problemnew/lists")location.href="https://www.luogu.org/fe/problem/list";
+    if(nurl.search("problemnew/lists")>-1&&nurl.search("fe/problem/list")==-1)location.href=location.href.replace("problemnew/lists","fe/problem/list").replace("name","keyword");
     if(nurl.search("problemnew/show")>-1&&nurl.search("fe/problem")==-1)location.href=location.href.replace("problemnew/show","fe/problem");
     if(nurl.search("recordnew/show")>-1&&nurl.search("fe/record")==-1)location.href=location.href.replace("recordnew/show","fe/record");
 }
