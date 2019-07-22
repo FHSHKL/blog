@@ -3,24 +3,9 @@
 // @version      1.0
 // @description  洛谷插件合集
 // @author       Fire Humans Skeleton
-// @match        https://www.luogu.org/*
+// @match        *://www.luogu.org/*
 // @grant        none
 // ==/UserScript==
-
-function LG_login()//回车登录
-{
-    console.log("LG-login");
-    var login=document.getElementsByClassName("frame lfe-form-sz-middle");
-    var log=document.createElement("script");
-    log.innerHTML="function log(event){if(event.keyCode === 13){document.getElementsByClassName(\"btn-login lfe-form-sz-middle\")[0].click();}}";
-    document.body.appendChild(log);
-    console.log(login);
-    for(var i=0;i<login.length;i++)
-    {
-        console.log(login[i]);
-        login[i].setAttribute('onkeypress','log(event)');
-    }
-}
 
 function LG_search()
 {
@@ -55,11 +40,23 @@ function LG_record()
     ybt[0].parentNode.appendChild(but);
 }
 
+function get_new(nurl)
+{
+    if(nurl=="www.luogu.org/problemnew/lists")location.href="https://www.luogu.org/fe/problem/list";
+    if(nurl.search("problemnew/show")>-1&&nurl.search("fe/problem")==-1)location.href=location.href.replace("problemnew/show","fe/problem");
+    if(nurl.search("recordnew/show")>-1&&nurl.search("fe/record")==-1)location.href=location.href.replace("recordnew/show","fe/record");
+}
+
 window.onload=function()
 {
     var nurl=location.host+location.pathname;
     console.log(nurl);
-    if(nurl=="www.luogu.org/auth/login")LG_login();
     if(nurl=="www.luogu.org/recordnew/lists")LG_search();
     if(nurl=="www.luogu.org/space/show")LG_record();
+    get_new(nurl);
 }
+
+/*
+recordnew/show
+fe/record
+*/
