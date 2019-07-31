@@ -1,25 +1,24 @@
+/*
+ * @Author: FireHumansSkeleton
+ * @Mail: 402146748@qq.com
+ * @Website: https://huokulou.tk
+ * @Description: LG_scripts
+ * @Date: 2019-07-22 08:26:30
+ * @LastEditTime: 2019-07-31 09:21:05
+ */
+
 const version=1;
 
-// ==UserScript==
-// @name         洛谷插件合集
-// @version      1.0
-// @description  洛谷插件合集
-// @author       Fire Humans Skeleton
-// @match        *://www.luogu.org/*
-// @require      https://huokulou.tk/static/js/jquery.js
-// @grant        none
-// ==/UserScript==
-
-function LG_searchname()
+function LG_script_search_by_name()
 {
     console.log("LG-seanchname");
-    document.getElementsByClassName("am-u-md-9")[0].style.width="100%"
+    document.getElementsByClassName("am-u-md-9")[0].style.width="100%";
     var s=document.getElementsByClassName("am-u-md-3")[0];
     s.parentNode.removeChild(s)
     document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
     "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' id='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' id='usernamesearch'>进入用户主页</button></p>"+
     "<h2>题目名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' id='probnamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' id='probnamesearch'>进入题库页面</button></p>";
-    function searchname()
+    function LG_search_name_slove()
     {
         var username=document.getElementById("usernamesearchbox").value;
         $.get(
@@ -38,18 +37,18 @@ function LG_searchname()
             }
         );
     }
-    function searchprob()
+    function LG_search_prob_slove()
     {
         var uprobname=document.getElementById("probnamesearchbox").value;
         window.open("https://www.luogu.org/problem/list?keyword="+encodeURIComponent(uprobname));
     }
-    document.getElementById("probnamesearch").onclick=function(){searchprob();};
-    $(document.getElementById("probnamesearchbox")).keydown(function (e) {if (e.keyCode==13){searchprob();}});
-    document.getElementById("usernamesearch").onclick=function(){searchname();};
-    $(document.getElementById("usernamesearchbox")).keydown(function (e) {if (e.keyCode==13){searchname();}});
+    document.getElementById("probnamesearch").onclick=function(){LG_search_prob_slove();};
+    $(document.getElementById("probnamesearchbox")).keydown(function (e) {if (e.keyCode==13){LG_search_prob_slove();}});
+    document.getElementById("usernamesearch").onclick=function(){LG_search_name_slove();};
+    $(document.getElementById("usernamesearchbox")).keydown(function (e) {if (e.keyCode==13){LG_search_name_slove();}});
 };
 
-function LG_record()
+function LG_script_record()
 {
     console.log("LG-record");
     var uid=parseInt(location.href.replace(/[^0-9|&]/ig,""));
@@ -64,7 +63,7 @@ function LG_record()
     ybt[0].parentNode.appendChild(but);
 }
 
-function LG_login()
+function LG_script_login()
 {
     console.log("LG-login");
     var s=document.getElementsByClassName("frame lfe-form-sz-middle");
@@ -79,10 +78,10 @@ function LG_script_init()
 {
     var nurl=location.host+location.pathname;
     console.log("当前版本:"+version);
-    console.log("当前地址"+nurl);
-    if(nurl=="www.luogu.org/space/show")LG_record();
-    if(nurl=="www.luogu.org/")LG_searchname();
-    if(nurl=="www.luogu.org/auth/login")LG_login();
+    console.log("当前地址:"+nurl);
+    if(nurl=="www.luogu.org/space/show")LG_script_record();
+    if(nurl=="www.luogu.org/")LG_script_search_by_name();
+    if(nurl=="www.luogu.org/auth/login")LG_script_login();
 }
 
 /*
