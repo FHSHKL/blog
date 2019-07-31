@@ -75,7 +75,7 @@ function LG_login()
     }
 }
 
-window.onload=function()
+function doit()
 {
     var nurl=location.host+location.pathname;
     console.log(nurl);
