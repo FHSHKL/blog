@@ -13,6 +13,9 @@ const version=1;
 function LG_searchname()
 {
     console.log("LG-seanchname");
+    document.getElementsByClassName("am-u-md-9")[0].style.width="100%"
+    var s=document.getElementsByClassName("am-u-md-3")[0];
+    s.parentNode.removeChild(s)
     document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
     "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' id='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' id='usernamesearch'>进入用户主页</button></p>"+
     "<h2>题目名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' id='probnamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' id='probnamesearch'>进入题库页面</button></p>";
