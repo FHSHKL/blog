@@ -75,10 +75,11 @@ function LG_login()
     }
 }
 
-function doit()
+function LG_script_init()
 {
     var nurl=location.host+location.pathname;
-    console.log(nurl);
+    console.log("当前版本:"+version);
+    console.log("当前地址"+nurl);
     if(nurl=="www.luogu.org/space/show")LG_record();
     if(nurl=="www.luogu.org/")LG_searchname();
     if(nurl=="www.luogu.org/auth/login")LG_login();
