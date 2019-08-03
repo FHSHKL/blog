@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 09:05:31
+ * @LastEditTime: 2019-08-03 09:13:31
  */
 
  const version="2.0.0";
@@ -85,7 +85,7 @@ function LG_script_init()
     var nurl=location.host+location.pathname;
     console.log("当前版本:"+version);
     console.log("当前地址:"+nurl);
-    if(jQuery)
+    if(typeof(jQuery).toLocaleLowerCase()=="undefined")
     {
         console.log("jquery已加载");
     }
