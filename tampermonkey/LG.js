@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 08:48:27
+ * @LastEditTime: 2019-08-03 08:53:41
  */
 
  const version="2.0.0";
@@ -41,13 +41,21 @@ function LG_script_search_by_name()
     {
         var uprobname=document.getElementById("probnamesearchbox").value;
         var pid=uprobname.match(/(poj|cf|sp|u|t|p)?[0-9]\d*/ig);
+        var withp=uprobname.match(/(poj|cf|sp|u|t|p)/ig);
         if(pid==null)
         {
             window.open("https://www.luogu.org/problem/list?keyword="+encodeURIComponent(uprobname));
         }
         else
         {
-            window.open("https://www.luogu.org/problem/"+pid[0]);
+            if(withp==null)
+            {
+                window.open("https://www.luogu.org/problem/P"+pid[0]);
+            }
+            else
+            {
+                window.open("https://www.luogu.org/problem/"+pid[0]);
+            }
         }
     }
     document.getElementById("probnamesearch").onclick=function(){LG_search_prob_slove();};
