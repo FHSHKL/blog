@@ -32,3 +32,6 @@ window.onload=function()
     document.body.appendChild(s);
 }
 ```
+
+## 更新
+2019/08/03 更新跳题逻辑，可识别题号
