@@ -4,8 +4,10 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 08:31:25
+ * @LastEditTime: 2019-08-03 08:46:17
  */
+
+ const version="2.0.0";
 
 function LG_script_search_by_name()
 {
