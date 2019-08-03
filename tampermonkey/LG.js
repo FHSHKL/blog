@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 08:59:46
+ * @LastEditTime: 2019-08-03 09:01:13
  */
 
  const version="2.0.0";
@@ -48,6 +48,7 @@ function LG_script_search_by_name()
         }
         else
         {
+            pid=pid[0].toLocaleUpperCase();
             if(withp==null)
             {
                 window.open("https://www.luogu.org/problem/P"+pid[0]);
