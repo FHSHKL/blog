@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 08:58:04
+ * @LastEditTime: 2019-08-03 08:59:46
  */
 
  const version="2.0.0";
@@ -93,7 +93,7 @@ function LG_script_init()
         console.log("未检测到jquery");
         var jq=document.createElement("script");
         jq.setAttribute("src","https://huokulou.tk/static/js/jquery.js");
-        document.body.appendChild(jq);
+        document.head.appendChild(jq);
         console.log("jquery已加载");
     }
     if(nurl=="www.luogu.org/space/show")LG_script_record();
