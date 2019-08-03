@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 08:53:41
+ * @LastEditTime: 2019-08-03 08:58:04
  */
 
  const version="2.0.0";
@@ -84,6 +84,18 @@ function LG_script_init()
     var nurl=location.host+location.pathname;
     console.log("当前版本:"+version);
     console.log("当前地址:"+nurl);
+    if(jQuery)
+    {
+        console.log("jquery已加载");
+    }
+    else
+    {
+        console.log("未检测到jquery");
+        var jq=document.createElement("script");
+        jq.setAttribute("src","https://huokulou.tk/static/js/jquery.js");
+        document.body.appendChild(jq);
+        console.log("jquery已加载");
+    }
     if(nurl=="www.luogu.org/space/show")LG_script_record();
     if(nurl=="www.luogu.org/")LG_script_search_by_name();
 }
