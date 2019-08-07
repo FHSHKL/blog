@@ -4,10 +4,10 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-03 09:22:43
+ * @LastEditTime: 2019-08-07 08:13:25
  */
 
- const version="2.0.0";
+ const script_version="2.0.0";
 
 function LG_script_search_by_name()
 {
@@ -82,8 +82,12 @@ function LG_script_record()
 
 function LG_script_init()
 {
+    if(document.getElementsByName("punch").length>0)
+    {
+        document.getElementsByName("punch")[0].click();
+    }
     var nurl=location.host+location.pathname;
-    console.log("当前版本:"+version);
+    console.log("当前版本:"+script_version);
     console.log("当前地址:"+nurl);
     if((typeof(jQuery)).toLocaleUpperCase()=="undefined")
     {
