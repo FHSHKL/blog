@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-07 08:15:51
+ * @LastEditTime: 2019-08-09 09:57:23
  */
 
  const script_version="2.0.0";
@@ -109,4 +109,6 @@ function LG_script_init()
     LG_script_punch();
     if(nurl=="www.luogu.org/space/show")LG_script_record();
     if(nurl=="www.luogu.org/")LG_script_search_by_name();
+    var scr=document.getElementById("LGscripts");
+    document.body.removeChild(scr);
 }
