@@ -4,7 +4,7 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-10 09:51:27
+ * @LastEditTime: 2019-08-10 10:20:03
  */
 
 function LG_script_init()
@@ -13,28 +13,7 @@ function LG_script_init()
 
     function record_color()
     {
-        console.log("LG-record-color");
-        var flagColorMap = {
-            0: "background-color: #2E468C;",
-            1: "background-color: #3498db;",
-            2: "background-color: #f1c40f;",
-            3: "background-color: #2E468C;",
-            4: "background-color: #2E468C;",
-            5: "background-color: #2E468C;",
-            6: "background-color: #e74c3c;",
-            7: "background-color: #8e44ad;",
-            12: "background-color: #5eb95e;",
-            14: "background-color: #e74c3c;",
-            21: "background-color: #5eb95e;",
-            22: "background-color: #e74c3c;",
-            23: "background-color: #2E468C;"
-        };
-        var record=window._feInjection.currentData.record.detail.testcases;
-        var oldrecord=document.getElementsByClassName("test-case-wrap")[0].children;
-        for(var i=0;i<oldrecord.length;i++)
-        {
-            oldrecord[i].children[0].style=flagColorMap[record[i+1].status];
-        }
+        console.log("LG-record-color*closed*");
     }
 
     function search_by_name()
@@ -46,7 +25,7 @@ function LG_script_init()
         "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button></p>";
         function LG_search_name_slove()
         {
-            var username=document.getElementById("usernamesearchbox").value;
+            var username=document.getElementsByName("usernamesearchbox")[0].value;
             $.get(
                 "/space/ajax_getuid?username="+username,
                 function (data)
@@ -66,7 +45,7 @@ function LG_script_init()
 
         function LG_search_prob_slove()
         {
-            var uprobname=document.getElementById("probnamesearchbox").value;
+            var uprobname=document.getElementsByName("probnamesearchbox")[0].value;
             var pid=uprobname.match(/(poj|cf|sp|u|t|p)?\d*[a-c]?/ig);
             var withp=uprobname.match(/(poj|cf|sp|u|t|p)/ig);
             if(pid==null)
@@ -119,7 +98,6 @@ function LG_script_init()
 
     var nurl=location.host+location.pathname;
     console.log("当前版本:"+script_version);
-    console.log("当前地址:"+nurl);
     if((typeof(jQuery)).toLocaleUpperCase()!="undefined")
     {
         console.log("jquery已加载");
@@ -135,5 +113,5 @@ function LG_script_init()
     if(nurl=="www.luogu.org")punch();
     if(nurl=="www.luogu.org/space/show")record();
     if(nurl=="www.luogu.org/")search_by_name();
-    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))record_color();
+    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))setInterval(record_color(),500);
 }
