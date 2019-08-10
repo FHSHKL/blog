@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-03 08:32:29
+ * @LastEditTime: 2019-08-10 08:33:30
+ * @LastEditors: Please set LastEditors
+ -->
 # LG-script
 ## <div style="float:right">洛谷插件合集</div>
 ## 支持的功能
@@ -35,6 +42,9 @@ window.onload=function()
 ```
 
 ## 更新
+2019/08/10 修改跳题逻辑，可识别CodeForces题号
+2019/08/10 使用局部函数，防止变量重名
+2019/08/10 修复无法私信bug
 2019/08/07 更新自动打卡
 2019/08/03 更新检测jQuery
 2019/08/03 更新跳题逻辑，可识别题号，不区分大小写
