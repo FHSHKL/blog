@@ -4,14 +4,39 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-10 08:48:28
+ * @LastEditTime: 2019-08-10 09:49:41
  */
 
 function LG_script_init()
 {
     const script_version="3.0.0";
 
-    function LG_script_search_by_name()
+    function new_recore_color()
+    {
+        var flagColorMap = {
+            0: "background-color: #2E468C;",
+            1: "background-color: #3498db;",
+            2: "background-color: #f1c40f;",
+            3: "background-color: #2E468C;",
+            4: "background-color: #2E468C;",
+            5: "background-color: #2E468C;",
+            6: "background-color: #e74c3c;",
+            7: "background-color: #8e44ad;",
+            12: "background-color: #5eb95e;",
+            14: "background-color: #e74c3c;",
+            21: "background-color: #5eb95e;",
+            22: "background-color: #e74c3c;",
+            23: "background-color: #2E468C;"
+        };
+        var record=window._feInjection.currentData.record.detail.testcases;
+        var oldrecord=document.getElementsByClassName("test-case-wrap")[0].children;
+        for(var i=0;i<oldrecord.length;i++)
+        {
+            oldrecord[i].children[0].style=flagColorMap[record[i+1].status];
+        }
+    }
+
+    function search_by_name()
     {
         console.log("LG-seanchname");
         document.getElementsByClassName("lg-article lg-index-stat")[0].innerHTML=
@@ -37,6 +62,7 @@ function LG_script_init()
                 }
             );
         }
+
         function LG_search_prob_slove()
         {
             var uprobname=document.getElementById("probnamesearchbox").value;
@@ -66,7 +92,7 @@ function LG_script_init()
         $("[name=usernamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_name_slove();}});
     };
 
-    function LG_script_record()
+    function record()
     {
         console.log("LG-record");
         var uid=parseInt(location.href.replace(/[^0-9|&]/ig,""));
@@ -81,7 +107,7 @@ function LG_script_init()
         ybt[0].parentNode.appendChild(but);
     }
 
-    function LG_script_punch()
+    function punch()
     {
         console.log("LG-punch");
         if(document.getElementsByName("punch").length>0)
@@ -105,7 +131,8 @@ function LG_script_init()
         document.head.appendChild(jq);
         console.log("jquery已加载");
     }
-    LG_script_punch();
-    if(nurl=="www.luogu.org/space/show")LG_script_record();
-    if(nurl=="www.luogu.org/")LG_script_search_by_name();
+    if(nurl=="www.luogu.org")punch();
+    if(nurl=="www.luogu.org/space/show")record();
+    if(nurl=="www.luogu.org/")search_by_name();
+    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))new_recore_color();
 }

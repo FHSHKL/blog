@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @LastEditTime: 2019-08-10 08:53:48
+ * @LastEditTime: 2019-08-10 09:50:15
  * @LastEditors: Please set LastEditors
  -->
 # LG-script
@@ -42,6 +42,7 @@ window.onload=function()
 ```
 
 ## 更新
+2019/08/10 自动使用旧版洛谷评测结果颜色
 2019/08/10 修改跳题按钮位置，增加随机跳题按钮
 2019/08/10 修改跳题逻辑，可识别CodeForces题号
 2019/08/10 使用局部函数，防止变量重名
