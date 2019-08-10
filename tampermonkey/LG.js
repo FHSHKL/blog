@@ -4,15 +4,16 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-10 09:49:41
+ * @LastEditTime: 2019-08-10 09:51:27
  */
 
 function LG_script_init()
 {
     const script_version="3.0.0";
 
-    function new_recore_color()
+    function record_color()
     {
+        console.log("LG-record-color");
         var flagColorMap = {
             0: "background-color: #2E468C;",
             1: "background-color: #3498db;",
@@ -134,5 +135,5 @@ function LG_script_init()
     if(nurl=="www.luogu.org")punch();
     if(nurl=="www.luogu.org/space/show")record();
     if(nurl=="www.luogu.org/")search_by_name();
-    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))new_recore_color();
+    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))record_color();
 }
