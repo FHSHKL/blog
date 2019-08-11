@@ -1,13 +1,13 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-11 08:31:23
+ $-lastTime: 2019-08-11 16:34:45
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
-    const script_version="4.1.2";
+    const script_version="4.2.4";
 
     function record_color()
     {
@@ -107,7 +107,11 @@ function LG_script_init()
         document.head.appendChild(jq);
         console.log("jquery已加载");
     }
-    if(nurl=="www.luogu.org/"){punch();search_by_name();}
-    if(nurl=="www.luogu.org/space/show/")record();
-    if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))setInterval(record_color(),500);
+    var to_do_list={
+        "www.luogu.org":"punch();search_by_name();",
+        "www.luogu.org/":"punch();search_by_name();",
+        "www.luogu.org/space/show":"record();",
+        "www.luogu.org/space/show/":"record();"
+    }
+    eval(to_do_list[nurl]);
 }

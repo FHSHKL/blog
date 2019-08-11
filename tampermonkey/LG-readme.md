@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @LastEditTime: 2019-08-11 08:16:05
- * @LastEditors: Please set LastEditors
+ * @lastTime: 2019-08-11 16:35:18
+ * @LastAuthor: Please set LastEditors
  -->
 # LG-script
 ## <div style="float:right">洛谷插件合集</div>
@@ -44,6 +44,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/11 修改调用功能函数方式
 2019/08/10 修正跳题逻辑
 2019/08/10 自动使用旧版洛谷评测结果颜色
 2019/08/10 修改跳题按钮位置，增加随机跳题按钮
