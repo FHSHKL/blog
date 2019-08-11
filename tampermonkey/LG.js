@@ -1,7 +1,7 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-11 16:34:45
+ $-lastTime: 2019-08-11 16:43:08
  $-Mail: 402146748@qq.com
 */
 
@@ -43,8 +43,8 @@ function LG_script_init()
         function LG_search_prob_slove()
         {
             var uprobname=document.getElementsByName("probnamesearchbox")[0].value;
-            var pid=uprobname.match(/(poj|cf|sp|u|t|p)?\d*[?a-c]/ig);
-            var withp=uprobname.match(/(poj|cf|sp|u|t|p)/ig);
+            var pid=uprobname.match(/(uva|at|poj|cf|sp|u|t|p)?\d*[a-z]?/ig);
+            var withp=uprobname.match(/(uva|at|poj|cf|sp|u|t|p)/ig);
             if(pid==null)
             {
                 window.open("https://www.luogu.org/problem/list?keyword="+encodeURIComponent(uprobname));

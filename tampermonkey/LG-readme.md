@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-11 16:35:18
+ * @lastTime: 2019-08-11 16:44:47
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -44,6 +44,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/11 添加识别UVA与AT开头题目
 2019/08/11 修改调用功能函数方式
 2019/08/10 修正跳题逻辑
 2019/08/10 自动使用旧版洛谷评测结果颜色
