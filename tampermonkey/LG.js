@@ -1,11 +1,9 @@
 /*
- * @Author: FireHumansSkeleton
- * @Mail: 402146748@qq.com
- * @Website: https://huokulou.tk
- * @Description: LG_scripts
- * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-11 08:15:42
- */
+ $-Author: FireHumansSkeleton
+ $-since: 2019-07-22 08:26:30
+ $-lastTime: 2019-08-11 08:31:23
+ $-Mail: 402146748@qq.com
+*/
 
 function LG_script_init()
 {
@@ -37,7 +35,6 @@ function LG_script_init()
                         return;
                     }
                     var tarid=arr['more']['uid'];
-
                     window.open("https://www.luogu.org/space/show?uid="+tarid);
                 }
             );
@@ -65,7 +62,7 @@ function LG_script_init()
                 }
             }
         }
-        $("[name=gotorandom]").click(function () {goto_url('/problemnew/show/P' + (parseInt(Math.random(0, 1) * 4503) + 1000));});
+        $("[name=gotorandom]").click(function () {window.open('/problemnew/show/P' + (parseInt(Math.random(0, 1) * 4503) + 1000));});
         $("[name=probnamesearch]").onclick=function(){LG_search_prob_slove();};
         $("[name=probnamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_prob_slove();}});
         $("[name=usernamesearch]").onclick=function(){LG_search_name_slove();};
