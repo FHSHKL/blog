@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @LastEditTime: 2019-08-10 10:22:18
+ * @LastEditTime: 2019-08-11 08:16:05
  * @LastEditors: Please set LastEditors
  -->
 # LG-script
@@ -14,6 +14,7 @@
 4. 洛谷自动打卡
 5. 洛谷登录界面回车登录(官方已完善)
 ## 即将支持的功能
+1. 支持使用旧版洛谷评测结果颜色
 ## 使用方法
 1. 下载并安装油猴插件([wall](http://www.tampermonkey.net/)&[nowall](https://blog.csdn.net/vermont_/article/details/84781871))
 2. 点击右上角油猴图标
@@ -43,6 +44,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/10 修正跳题逻辑
 2019/08/10 自动使用旧版洛谷评测结果颜色
 2019/08/10 修改跳题按钮位置，增加随机跳题按钮
 2019/08/10 修改跳题逻辑，可识别CodeForces题号
@@ -51,4 +53,10 @@ window.onload=function()
 2019/08/07 更新自动打卡
 2019/08/03 更新检测jQuery
 2019/08/03 更新跳题逻辑，可识别题号，不区分大小写
+```
+
+## coder
+```
+LG_wxb-FireHumansSkeleton
+LG_wsc-2018小绿
 ```

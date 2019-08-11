@@ -4,12 +4,12 @@
  * @Website: https://huokulou.tk
  * @Description: LG_scripts
  * @Date: 2019-07-22 08:26:30
- * @LastEditTime: 2019-08-10 10:20:03
+ * @LastEditTime: 2019-08-11 08:15:42
  */
 
 function LG_script_init()
 {
-    const script_version="3.0.0";
+    const script_version="4.1.2";
 
     function record_color()
     {
@@ -46,7 +46,7 @@ function LG_script_init()
         function LG_search_prob_slove()
         {
             var uprobname=document.getElementsByName("probnamesearchbox")[0].value;
-            var pid=uprobname.match(/(poj|cf|sp|u|t|p)?\d*[a-c]?/ig);
+            var pid=uprobname.match(/(poj|cf|sp|u|t|p)?\d*[?a-c]/ig);
             var withp=uprobname.match(/(poj|cf|sp|u|t|p)/ig);
             if(pid==null)
             {
@@ -110,8 +110,7 @@ function LG_script_init()
         document.head.appendChild(jq);
         console.log("jquery已加载");
     }
-    if(nurl=="www.luogu.org")punch();
-    if(nurl=="www.luogu.org/space/show")record();
-    if(nurl=="www.luogu.org/")search_by_name();
+    if(nurl=="www.luogu.org/"){punch();search_by_name();}
+    if(nurl=="www.luogu.org/space/show/")record();
     if(nurl.match(/www\.luogu\.org\/record\/\d*/ig))setInterval(record_color(),500);
 }
