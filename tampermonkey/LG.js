@@ -1,13 +1,13 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-13 15:18:04
+ $-lastTime: 2019-08-15 08:09:54
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
-    const script_version="4.2.4";
+    const script_version="4.3.4";
 
     function submit_button()
     {
