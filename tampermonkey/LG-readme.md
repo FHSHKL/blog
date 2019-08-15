@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-11 16:44:47
+ * @lastTime: 2019-08-15 08:09:14
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -44,6 +44,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/15 修改用于匹配题目编号的正则表达式
 2019/08/11 添加识别UVA与AT开头题目
 2019/08/11 修改调用功能函数方式
 2019/08/10 修正跳题逻辑
