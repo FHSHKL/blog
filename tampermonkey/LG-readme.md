@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-21 15:32:36
+ * @lastTime: 2019-08-21 15:40:39
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -40,7 +40,7 @@ window.onload=function()
     if(local)
     {
         var s=document.createElement("script");
-        s.setAttribute("id","LG_from_local");
+        s.setAttribute("name","LG_script");
         s.innerHTML=localStorage.getItem("LG_script");
         document.body.appendChild(s);
         LG_load_from_local();
@@ -48,13 +48,14 @@ window.onload=function()
     var scr=document.createElement("script");
     scr.setAttribute("src","http://localhost:8080/tampermonkey/lg.js");
     scr.setAttribute("onload","LG_script_init()");
-    scr.setAttribute("id","LG_from_github");
+    scr.setAttribute("name","LG_script");
     document.body.appendChild(scr);
 }
 ```
 
 ## 更新
 ```
+2019/08/21 修复多次加载bug
 2019/08/21 优化加载速度
 2019/08/15 修改用于匹配题目编号的正则表达式
 2019/08/11 添加识别UVA与AT开头题目
