@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-15 08:09:14
+ * @lastTime: 2019-08-21 15:12:02
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -35,15 +35,24 @@
 // ==/UserScript==
 window.onload=function()
 {
-    var s=document.createElement("script");
-    s.setAttribute("src","https://huokulou.tk/blog/tampermonkey/LG.js");
-    s.setAttribute("onload","LG_script_init()");
-    document.body.appendChild(s);
+    var local=localStorage.getItem("LG_script_version");
+    if(local)
+    {
+        var s=document.createElement("script");
+        s.innerHTML=localStorage.getItem("LG_script");
+        document.body.appendChild(s);
+        LG_load_from_local();
+    }
+    var scr=document.createElement("script");
+    scr.setAttribute("src","https://huokulou.tk/tampermonkey/lg.js");
+    scr.setAttribute("onload","LG_script_init()");
+    document.body.appendChild(scr);
 }
 ```
 
 ## 更新
 ```
+2019/08/21 优化加载速度
 2019/08/15 修改用于匹配题目编号的正则表达式
 2019/08/11 添加识别UVA与AT开头题目
 2019/08/11 修改调用功能函数方式
