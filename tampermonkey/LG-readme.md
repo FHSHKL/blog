@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-21 15:12:02
+ * @lastTime: 2019-08-21 15:29:04
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -39,13 +39,15 @@ window.onload=function()
     if(local)
     {
         var s=document.createElement("script");
+        s.setAttribute("id","LG_from_local");
         s.innerHTML=localStorage.getItem("LG_script");
         document.body.appendChild(s);
         LG_load_from_local();
     }
     var scr=document.createElement("script");
-    scr.setAttribute("src","https://huokulou.tk/tampermonkey/lg.js");
+    scr.setAttribute("src","http://localhost:8080/tampermonkey/lg.js");
     scr.setAttribute("onload","LG_script_init()");
+    scr.setAttribute("id","LG_from_github");
     document.body.appendChild(scr);
 }
 ```

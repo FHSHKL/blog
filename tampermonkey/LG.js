@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-21 15:18:05
+ $-lastTime: 2019-08-21 15:27:21
  $-Mail: 402146748@qq.com
 */
 
-const script_version="6.5.10";
-
 function LG_script_init()
 {
+
+    const script_version="6.5.11";
 
     function submit_button()
     {
@@ -96,7 +96,7 @@ function LG_script_init()
 
     function init()
     {
-        if((typeof(script_version)).toLocaleLowerCase!="undefined")
+        if(document.getElementById("LG_from_local")!=null)
         {
             return;
         }
