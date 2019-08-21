@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-21 15:11:10
+ $-lastTime: 2019-08-21 15:17:31
  $-Mail: 402146748@qq.com
 */
 
+const script_version="6.5.10";
+
 function LG_script_init()
 {
-
-    const script_version="6.5.10";
 
     function submit_button()
     {
@@ -96,6 +96,10 @@ function LG_script_init()
 
     function init()
     {
+        if((typeof(script_version)).toLocaleLowerCase!="undefined")
+        {
+            return;
+        }
         var nurl=location.host+location.pathname;
         console.log("当前版本:"+script_version);
         if((typeof(jQuery)).toLocaleUpperCase()!="undefined")
@@ -130,19 +134,18 @@ function LG_script_init()
 
     function updata_script()
     {
-        console.log("updata");
+        console.log("LG-updata");
         localStorage.setItem("LG_script_version",script_version);
         localStorage.setItem("LG_script",LG_script_init.toString().replace("LG_script_init","LG_load_from_local"));
     }
 
     function check_version()
     {
-
-        console.log("checking");
+        console.log("LG-checking");
 
         var version=localStorage.getItem("LG_script_version");
         
-        if(version)
+        if(version!=null)
         {
             if(version==script_version)
             {
