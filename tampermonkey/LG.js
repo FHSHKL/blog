@@ -1,7 +1,7 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-21 15:17:31
+ $-lastTime: 2019-08-21 15:18:05
  $-Mail: 402146748@qq.com
 */
 
@@ -141,8 +141,6 @@ function LG_script_init()
 
     function check_version()
     {
-        console.log("LG-checking");
-
         var version=localStorage.getItem("LG_script_version");
         
         if(version!=null)
