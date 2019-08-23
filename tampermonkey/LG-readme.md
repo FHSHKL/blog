@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-21 15:40:39
+ * @lastTime: 2019-08-23 16:05:31
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -55,6 +55,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/23 加长私信长度且适应屏幕
 2019/08/21 修复多次加载bug
 2019/08/21 优化加载速度
 2019/08/15 修改用于匹配题目编号的正则表达式

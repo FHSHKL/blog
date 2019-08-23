@@ -1,18 +1,44 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-21 15:39:40
+ $-lastTime: 2019-08-23 16:12:00
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="6.5.13";
+    const script_version="7.0.55";
 
-    function submit_button()
+    function message()
     {
-        console.log("LG-submitbutton*closed*");
+        console.log("LG-message");
+        var tim=setInterval(function()
+        {
+            var height=window.innerHeight-document.getElementsByClassName("wrapper wrapped lfe-body header-layout narrow")[0].scrollHeight;
+            var s=document.getElementsByClassName("lg-message-content")[0];
+            if(s==undefined)
+            {
+                return;
+            }
+            s=document.getElementsByClassName("am-input-group am-input-group-sm am-input-group-primary")[0];
+            s.style.top="16px";
+            s.style.position="sticky";
+            s=document.getElementsByClassName("lg-contacts")[0];
+            s.style.overflow="unset";
+            s.style.height="unset";
+            s=document.getElementsByClassName("am-u-md-7")[0].getElementsByClassName("lg-small")[0];s.parentNode.removeChild(s);
+            document.getElementsByClassName("am-u-md-7")[0].getElementsByClassName("lg-article")[0].style.height="100%";
+            document.getElementsByClassName("lg-message-content")[0].style.height="85%";
+            s=document.getElementsByClassName("am-u-md-5")[0];
+            s.style.height=height+"px";
+            s.style.overflowX="hidden";
+            s.style.overflowY="auto";
+            s=document.getElementsByClassName("am-u-md-7")[0];
+            s.style.height=height+"px";
+            
+            clearInterval(tim);
+        },100);
     }
 
     function search_by_name()
@@ -118,9 +144,11 @@ function LG_script_init()
             "www.luogu.org":"punch();search_by_name();",
             "www.luogu.org/":"punch();search_by_name();",
             "www.luogu.org/space/show":"record();",
-            "www.luogu.org/space/show/":"record();"
+            "www.luogu.org/space/show/":"record();",
+            "match_0":"message();"
         }
         var match_list=[
+            "action=message"
         ]
         for(var i=0;i<match_list.length;i++)
         {
