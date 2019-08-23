@@ -46,7 +46,7 @@ window.onload=function()
         LG_load_from_local();
     }
     var scr=document.createElement("script");
-    scr.setAttribute("src","http://localhost:8080/tampermonkey/lg.js");
+    scr.setAttribute("src","https://huokulou.tk/blog/tampermonkey/LG.js");
     scr.setAttribute("onload","LG_script_init()");
     scr.setAttribute("name","LG_script");
     document.body.appendChild(scr);
