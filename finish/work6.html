@@ -113,11 +113,11 @@
             }
             function turn()
             {
-                init();
                 document.getElementById("nmsl").style.transform=`rotateY(90deg)`;
+                init();
                 setTimeout(function(){
                     document.getElementById("nmsl").style.transform=`rotateY(0deg)`;
-                },600);
+                },500);
                 /*
                 var ti=setInterval(function(){
                     if(deg>89)
