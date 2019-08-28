@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.0.55";
+    const script_version="7.1.55";
 
     function message()
     {
@@ -90,9 +90,9 @@ function LG_script_init()
             }
         }
         $("[name=gotorandom]").click(function () {window.open('/problemnew/show/P' + (parseInt(Math.random(0, 1) * 4503) + 1000));});
-        $("[name=probnamesearch]").onclick=function(){LG_search_prob_slove();};
+        $("[name=probnamesearch]")[0].onclick=function(){LG_search_prob_slove();};
         $("[name=probnamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_prob_slove();}});
-        $("[name=usernamesearch]").onclick=function(){LG_search_name_slove();};
+        $("[name=usernamesearch]")[0].onclick=function(){LG_search_name_slove();};
         $("[name=usernamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_name_slove();}});
     };
 

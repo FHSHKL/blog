@@ -46,7 +46,7 @@ window.onload=function()
         LG_load_from_local();
     }
     var scr=document.createElement("script");
-    scr.setAttribute("src","http://localhost:8080/tampermonkey/lg.js");
+    scr.setAttribute("src","https://huokulou.tk/blog/tampermonkey/LG.js");
     scr.setAttribute("onload","LG_script_init()");
     scr.setAttribute("name","LG_script");
     document.body.appendChild(scr);
@@ -55,6 +55,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/08/27 修复跳题按钮
 2019/08/23 加长私信长度且适应屏幕
 2019/08/21 修复多次加载bug
 2019/08/21 优化加载速度
