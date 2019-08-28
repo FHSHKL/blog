@@ -12,6 +12,9 @@
                 top: calc(50%);
                 left: calc(50%);
                 transform-style: preserve-3d;
+
+                /*transition: transform 0.5s cubic-bezier(.17,.67,.68,1.43) 1s;*/
+                transition: transform 0.5s;
             }
             .block
             {
@@ -112,6 +115,11 @@
             {
                 var deg=0;
                 init();
+                document.getElementById("nmsl").style.transform=`rotateY(90deg)`;
+                setTimeout(function(){
+                    document.getElementById("nmsl").style.transform=`rotateY(0deg)`;
+                },600);
+                /*
                 var ti=setInterval(function(){
                     if(deg>89)
                     {
@@ -121,6 +129,7 @@
                     s.style=`transform: rotateY(${deg}deg)`;
                     deg++;
                 },10);
+                */
             }
             setInterval(function(){turn()},890);
         </script>
