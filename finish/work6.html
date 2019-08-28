@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body
+            {
+                background: black;
+            }
+            #nmsl
+            {
+                position: absolute;
+                top: calc(50%);
+                left: calc(50%);
+                transform-style: preserve-3d;
+            }
+            .block
+            {
+                transform-style: preserve-3d;
+                --size:32px;
+            }
+            .block div
+            {
+                background-color: #eee;
+                border: 1px solid #ccc;
+                position: absolute;
+                width: calc(var(--size)*2);
+                height: calc(var(--size)*2);
+            }
+            .block div:nth-child(1)
+            {
+                transform:                 translateZ(var(--size));
+            }
+            .block div:nth-child(2)
+            {
+                transform: rotateX(180deg) translateZ(var(--size));
+            }
+            .block div:nth-child(3)
+            {
+                transform: rotateY(-90deg) translateZ(var(--size));
+            }
+            .block div:nth-child(4)
+            {
+                transform: rotateY( 90deg) translateZ(var(--size));
+            }
+            .block div:nth-child(5)
+            {
+                transform: rotateX( 90deg) translateZ(var(--size));
+            }
+            .block div:nth-child(6)
+            {
+                transform: rotateX(-90deg) translateZ(var(--size));
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nmsl" style="transform-style: preserve-3d;"></div>
+        <script>
+            function get_block(x,y,z)
+            {
+                var s=document.createElement("div");
+                s.setAttribute("class","block");
+                for(var i=0;i<6;i++)
+                {
+                    var ss=document.createElement("div");
+                    s.appendChild(ss);
+                }
+                var sty=`transform:translate3d(${x}px,${y}px,${z}px);`
+                s.setAttribute("style",sty+"-webkit-"+sty+"-moz-"+sty);
+                return s;
+            }
+            var num_list={
+                "0":[[1,1,1],[1,0,1],[1,0,1],[1,0,1],[1,1,1]],
+                "1":[[1,1,0],[0,1,0],[0,1,0],[0,1,0],[1,1,1]],
+                "2":[[1,1,1],[0,0,1],[1,1,1],[1,0,0],[1,1,1]],
+                "3":[[1,1,1],[0,0,1],[1,1,1],[0,0,1],[1,1,1]],
+                "4":[[1,0,1],[1,0,1],[1,1,1],[0,0,1],[0,0,1]],
+                "5":[[1,1,1],[1,0,0],[1,1,1],[0,0,1],[1,1,1]],
+                "6":[[1,1,1],[1,0,0],[1,1,1],[1,0,1],[1,1,1]],
+                "7":[[1,1,1],[0,0,1],[0,0,1],[0,0,1],[0,0,1]],
+                "8":[[1,1,1],[1,0,1],[1,1,1],[1,0,1],[1,1,1]],
+                "9":[[1,1,1],[1,0,1],[1,1,1],[0,0,1],[1,1,1]],
+                "10":[[1,1,1],[1,0,1],[1,0,1],[1,0,1],[1,1,1]]
+            }
+            var now_num=9;
+            function init()
+            {
+                var pre=document.createElement("div");
+                for(var i=0;i<3;i++)//left
+                {
+                    for(var j=0;j<5;j++)//top
+                    {
+                        for(var k=0;k<3;k++)//back
+                        {
+                            var s=""+(now_num+1);
+                            var l=""+(now_num);
+                            if(num_list[s][j][i]&&num_list[l][j][k])
+                            {
+                                pre.appendChild(get_block(i*64-96,j*64-160,k*64-96));
+                                //document.getElementById("nmsl").appendChild();
+                            }
+                        }
+                    }
+                }
+                now_num--;
+                if(now_num==-1)
+                {
+                    now_num=9;
+                }
+                document.getElementById("nmsl").innerHTML=pre.innerHTML;
+            }
+            function turn()
+            {
+                var deg=0;
+                init();
+                var ti=setInterval(function(){
+                    if(deg>89)
+                    {
+                        clearInterval(ti);
+                    }
+                    var s=document.getElementById("nmsl");
+                    s.style=`transform: rotateY(${deg}deg)`;
+                    deg++;
+                },10);
+            }
+            setInterval(function(){turn()},890);
+        </script>
+    </body>
+</html>
