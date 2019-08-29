@@ -19,7 +19,10 @@
             .block
             {
                 transform-style: preserve-3d;
+                width: 0px;
+                height: 0px;
                 --size:32px;
+                
             }
             .block div
             {
@@ -28,6 +31,8 @@
                 position: absolute;
                 width: calc(var(--size)*2);
                 height: calc(var(--size)*2);
+                margin-left: -32px;
+                margin-top: -32px;
             }
             .block div:nth-child(1)
             {
@@ -60,9 +65,9 @@
         <script>
             function get_block(x,y,z)
             {
-                x=x*64-96;
-                y=y*64-160;
-                z=z*64-96;
+                x=x*64-64-32;
+                y=y*64-128-32;
+                z=z*64-64-32;
                 var s=document.createElement("div");
                 s.setAttribute("class","block");
                 for(var i=0;i<6;i++)
@@ -112,11 +117,12 @@
                                     case 3:toadd=get_block(  k,  j,3-i);break;
                                 }
                                 pre.appendChild(toadd);
-                                //document.getElementById("nmsl").appendChild();
+                                
                             }
                         }
                     }
                 }
+                //pre.appendChild(get_block(1,2,1));
                 now_num--;
                 if(now_num==-1)
                 {
@@ -130,7 +136,8 @@
                 now_deg++;
                 document.getElementById("nmsl").style.transform=`rotateY(${now_deg*90}deg)`;
             }
-            setInterval(function(){turn()},890);
+            //init();
+            setInterval(function(){turn()},700);
         </script>
     </body>
 </html>
