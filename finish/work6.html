@@ -13,8 +13,8 @@
                 left: calc(50%);
                 transform-style: preserve-3d;
 
-                /*transition: transform 0.5s cubic-bezier(.17,.67,.68,1.43) 1s;*/
-                transition: transform 0.5s;
+                transition: transform 0.5s/* cubic-bezier(.17,.67,.68,1.43) 1s*/;
+                
             }
             .block
             {
@@ -60,6 +60,9 @@
         <script>
             function get_block(x,y,z)
             {
+                x=x*64-96;
+                y=y*64-160;
+                z=z*64-96;
                 var s=document.createElement("div");
                 s.setAttribute("class","block");
                 for(var i=0;i<6;i++)
@@ -85,9 +88,11 @@
                 "10":[[1,1,1],[1,0,1],[1,0,1],[1,0,1],[1,1,1]]
             }
             var now_num=9;
+            var now_deg=0;
             function init()
             {
                 var pre=document.createElement("div");
+                var tow=now_deg&3;
                 for(var i=0;i<3;i++)//left
                 {
                     for(var j=0;j<5;j++)//top
@@ -98,7 +103,15 @@
                             var l=""+(now_num);
                             if(num_list[s][j][i]&&num_list[l][j][k])
                             {
-                                pre.appendChild(get_block(i*64-96,j*64-160,k*64-96));
+                                var toadd;
+                                switch(tow)
+                                {
+                                    case 0:toadd=get_block(  i,  j,  k);break;
+                                    case 1:toadd=get_block(3-k,  j,  i);break;
+                                    case 2:toadd=get_block(3-i,  j,3-k);break;
+                                    case 3:toadd=get_block(  k,  j,3-i);break;
+                                }
+                                pre.appendChild(toadd);
                                 //document.getElementById("nmsl").appendChild();
                             }
                         }
@@ -113,22 +126,9 @@
             }
             function turn()
             {
-                document.getElementById("nmsl").style.transform=`rotateY(90deg)`;
                 init();
-                setTimeout(function(){
-                    document.getElementById("nmsl").style.transform=`rotateY(0deg)`;
-                },500);
-                /*
-                var ti=setInterval(function(){
-                    if(deg>89)
-                    {
-                        clearInterval(ti);
-                    }
-                    var s=document.getElementById("nmsl");
-                    s.style=`transform: rotateY(${deg}deg)`;
-                    deg++;
-                },10);
-                */
+                now_deg++;
+                document.getElementById("nmsl").style.transform=`rotateY(${now_deg*90}deg)`;
             }
             setInterval(function(){turn()},890);
         </script>
