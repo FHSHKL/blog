@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-08-23 16:12:00
+ $-lastTime: 2019-09-12 16:29:27
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="7.1.55";
+    const script_version="7.1.56";
 
     function message()
     {
@@ -41,13 +41,23 @@ function LG_script_init()
         },100);
     }
 
+    function get_user_list()
+    {
+        var uid_num=(localStorage.getItem("uid_num")*1)||(0);
+        var s=document.getElementById("user_list");
+        for(var i=0;i<uid_num;i++)
+        {
+            var ch=document.createElement("div");
+        }
+    }
+
     function search_by_name()
     {
         console.log("LG-seanchname");
         document.getElementsByClassName("lg-article lg-index-stat")[0].innerHTML=
         "<h2>题目名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' name='probnamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='probnamesearch'>进入题库界面</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">随机跳题</button></p>";
         document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
-        "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button></p>";
+        "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">常用uid</button></p>";
         function LG_search_name_slove()
         {
             var username=document.getElementsByName("usernamesearchbox")[0].value;
