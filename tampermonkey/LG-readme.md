@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-08-23 16:05:31
+ * @lastTime: 2019-09-12 16:39:32
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -73,8 +73,8 @@ window.onload=function()
 2019/08/03 更新跳题逻辑，可识别题号，不区分大小写
 ```
 
-## coder
+## user
 ```
-LG_wxb-FireHumansSkeleton
+LG_wxb-FireHumansSkeleton(coder)
 LG_wsc-2018小绿
 ```
