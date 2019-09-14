@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-09-12 16:39:32
+ * @lastTime: 2019-09-14 09:37:55
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -32,6 +32,7 @@
 // @description  洛谷插件合集
 // @author       Fire Humans Skeleton
 // @match        *://www.luogu.org/*
+// @match        *://www.luogu.com.cn/*
 // @grant        none
 // ==/UserScript==
 window.onload=function()
@@ -55,6 +56,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/09/14 匹配洛谷新域名
 2019/08/27 修复跳题按钮
 2019/08/23 加长私信长度且适应屏幕
 2019/08/21 修复多次加载bug

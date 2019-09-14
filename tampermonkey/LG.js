@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-09-12 16:29:27
+ $-lastTime: 2019-09-14 09:32:29
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="7.1.56";
+    const script_version="7.2.57";
 
     function message()
     {
@@ -155,6 +155,10 @@ function LG_script_init()
             "www.luogu.org/":"punch();search_by_name();",
             "www.luogu.org/space/show":"record();",
             "www.luogu.org/space/show/":"record();",
+            "www.luogu.com.cn":"punch();search_by_name();",
+            "www.luogu.com.cn/":"punch();search_by_name();",
+            "www.luogu.com.cn/space/show":"record();",
+            "www.luogu.ocom.cn/space/show/":"record();",
             "match_0":"message();"
         }
         var match_list=[
