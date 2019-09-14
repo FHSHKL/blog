@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-09-14 09:32:29
+ $-lastTime: 2019-09-14 14:01:36
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="7.2.57";
+    const script_version="7.2.62";
 
     function message()
     {
@@ -39,6 +39,18 @@ function LG_script_init()
             
             clearInterval(tim);
         },100);
+    }
+
+    function background()
+    {
+        console.log("LG-background");
+        var bac=document.getElementsByClassName("background")[0];
+        bac.style.zIndex=1;
+        var s=bac.parentNode.children[1];
+        for(var i=0;i<3;i++)
+        {
+            s.children[i].style.zIndex=2;
+        }
     }
 
     function get_user_list()
@@ -151,18 +163,16 @@ function LG_script_init()
             console.log("jQuery已加载");
         }
         var to_do_list={
-            "www.luogu.org":"punch();search_by_name();",
-            "www.luogu.org/":"punch();search_by_name();",
-            "www.luogu.org/space/show":"record();",
-            "www.luogu.org/space/show/":"record();",
-            "www.luogu.com.cn":"punch();search_by_name();",
-            "www.luogu.com.cn/":"punch();search_by_name();",
-            "www.luogu.com.cn/space/show":"record();",
-            "www.luogu.ocom.cn/space/show/":"record();",
-            "match_0":"message();"
+            "www.luogu.org":"punch();search_by_name();background();",
+            "www.luogu.org/":"punch();search_by_name();background();",
+            "www.luogu.com.cn":"punch();search_by_name();background();",
+            "www.luogu.com.cn/":"punch();search_by_name();background();",
+            "match_0":"message();",
+            "match_1":"record();"
         }
         var match_list=[
-            "action=message"
+            /action=message/ig,
+            /www\.luogu.+\/space\/show/ig
         ]
         for(var i=0;i<match_list.length;i++)
         {

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-09-14 09:37:55
+ * @lastTime: 2019-09-14 14:06:11
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -56,6 +56,7 @@ window.onload=function()
 
 ## 更新
 ```
+2019/09/14 修改首页主题显示
 2019/09/14 匹配洛谷新域名
 2019/08/27 修复跳题按钮
 2019/08/23 加长私信长度且适应屏幕
