@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-09-14 14:01:36
+ $-lastTime: 2019-09-16 12:53:58
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="7.2.62";
+    const script_version="7.2.68";
 
     function message()
     {
@@ -50,6 +50,19 @@ function LG_script_init()
         for(var i=0;i<3;i++)
         {
             s.children[i].style.zIndex=2;
+        }
+
+        s=document.getElementsByClassName("user-nav")[0];
+        s.style.backgroundColor="rgb(255,255,255,.5)";
+        s.style.padding="5px";
+        s.style.borderRadius="10px";
+
+        s=document.getElementsByClassName("header-link color-none");
+        for(var i=0;i<2;i++)
+        {
+            s[i].style.backgroundColor="rgb(255,255,255,.5)";
+            s[i].style.padding="5px";
+            s[i].style.borderRadius="10px";
         }
     }
 
