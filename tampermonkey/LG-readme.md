@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-03 08:32:29
- * @lastTime: 2019-09-16 12:27:56
+ * @lastTime: 2019-09-16 12:39:26
  * @LastAuthor: Please set LastEditors
  -->
 # LG-script
@@ -17,7 +17,7 @@
 ## 即将支持的功能
 1. 支持使用旧版洛谷评测结果颜色
 ## 使用方法
-1. 下载并安装油猴插件([download](https://huokulou.tk/blog/tampermonkey/google-access-helper-2.3.0.zip))
+1. 下载并安装油猴插件([google-access-helper](https://huokulou.tk/blog/tampermonkey/google-access-helper-2.3.0.zip)-[tampermonkey](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo))
 2. 点击右上角油猴图标
 3. 进入管理面板
 4. 点击“已安装脚本左侧加号”新建用户脚本
