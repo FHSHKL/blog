@@ -1,14 +1,14 @@
 /*
  $-Author: FireHumansSkeleton
  $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-09-14 14:01:36
+ $-lastTime: 2019-09-16 16:33:40
  $-Mail: 402146748@qq.com
 */
 
 function LG_script_init()
 {
 
-    const script_version="7.2.62";
+    const script_version="7.2.93";
 
     function message()
     {
@@ -51,15 +51,41 @@ function LG_script_init()
         {
             s.children[i].style.zIndex=2;
         }
+
+        s=document.getElementsByClassName("user-nav")[0];
+        s.style.backgroundColor="rgb(255,255,255,.5)";
+        s.style.padding="5px";
+        s.style.borderRadius="10px";
+
+        s=document.getElementsByClassName("header-link color-none");
+        for(var i=0;i<2;i++)
+        {
+            s[i].style.backgroundColor="rgb(255,255,255,.5)";
+            s[i].style.padding="5px";
+            s[i].style.borderRadius="10px";
+        }
     }
 
     function get_user_list()
     {
+        console.log("LG-users");
+        var sty_box=document.createElement("style");
+        sty_box.innerHTML=".users_cd{position: absolute;display: inline-flex;max-height:100px;overflow-y:scroll;}"+
+        ".users_cd::-webkit-scrollbar{display: none;}"+
+        ".users_cd > div{display: none;course:pointer;}"+
+        ".users_cd > span{background-color:#0e90d2;color:#fff;font-size: 1.4rem;padding:6px 14px 6px 14px;text-align: center;border-radius: 5px;}"+
+        ".users_cd:hover{border:1px solid #ccc;}"+
+        ".users_cd:hover > span{display: none;}"+
+        ".users_cd:hover > div{display: block;}";
+        document.head.appendChild(sty_box);
         var uid_num=(localStorage.getItem("uid_num")*1)||(0);
         var s=document.getElementById("user_list");
         for(var i=0;i<uid_num;i++)
         {
             var ch=document.createElement("div");
+            var now=localStorage.getItem("uid_"+i);
+            ch.innerHTML=now;
+            s.appendChild(ch);
         }
     }
 
@@ -67,9 +93,9 @@ function LG_script_init()
     {
         console.log("LG-seanchname");
         document.getElementsByClassName("lg-article lg-index-stat")[0].innerHTML=
-        "<h2>题目名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' name='probnamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='probnamesearch'>进入题库界面</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">随机跳题</button></p>";
+        "<h2>题目名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' name='probnamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='probnamesearch'>进入题库界面</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">随机跳题</button>";
         document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
-        "<h2>用户名搜索</h2><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'><p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">常用uid</button></p>";
+        "<h2>用户名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<div class=\"users_cd\" id=\"user_list\"><span>常用uid</span></div>";
         function LG_search_name_slove()
         {
             var username=document.getElementsByName("usernamesearchbox")[0].value;
@@ -163,10 +189,10 @@ function LG_script_init()
             console.log("jQuery已加载");
         }
         var to_do_list={
-            "www.luogu.org":"punch();search_by_name();background();",
-            "www.luogu.org/":"punch();search_by_name();background();",
-            "www.luogu.com.cn":"punch();search_by_name();background();",
-            "www.luogu.com.cn/":"punch();search_by_name();background();",
+            "www.luogu.org":"punch();search_by_name();background();get_user_list();",
+            "www.luogu.org/":"punch();search_by_name();background();get_user_list();",
+            "www.luogu.com.cn":"punch();search_by_name();background();get_user_list();",
+            "www.luogu.com.cn/":"punch();search_by_name();background();get_user_list();",
             "match_0":"message();",
             "match_1":"record();"
         }
