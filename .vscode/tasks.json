@@ -1,0 +1,35 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build cpp",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                //"cwd": "O:\\mingw64\\bin"
+            }
+        },
+        {
+            "label": "clear",
+            "type": "shell",
+            "command":"cmd",
+            "args": [
+                "/c cd ${fileDirname} &del /s /q /f *.exe"
+            ]
+        },
+        {
+            "label": "clear_workspace",
+            "type": "shell",
+            "command":"cmd",
+            "args": [
+                "/c cd ${workspaceFolder} &del /s /q /f *.exe"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}

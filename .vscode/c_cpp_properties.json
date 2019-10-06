@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/include/c++",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/include",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/../../../../include",
+                "O:/mingw64/lib/gcc/mingw32/6.3.0/include-fixed"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "O:/mingw64/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "O:/MinGW64/lib/gcc/mingw32/6.3.0/include",
+                    "O:/MinGW64/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

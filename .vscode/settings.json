@@ -1,29 +1,9 @@
 {
-    "fileheader.configObj": {
-        "autoAdd": false,
-        "language": {
-            "languagetest": {
-                "head": "/$$",
-                "middle": " $",
-                "end": " $/"
-            },
-            "js": {
-                "head": "/*",
-                "middle": " $-",
-                "end": "*/"
-            }
-        },
-        "specialOptions":{
-            "Date": "since",
-            "LastEditTime": "lastTime",
-            "LastEditors": "LastAuthor",
-            "Description": "message"
-        }
-    },
-    "fileheader.customMade":{
-        "Author": "FireHumansSkeleton",
-        "Date": "Do not edit",
-        "LastEditTime": "Do not edit",
-        "Mail": "402146748@qq.com"
-    }
+	"code-runner.executorMap": {
+    //"cpp": "cd $dir & call g++ $fileName -o $fileNameWithoutExt.exe & if not %errorlevel%==\"0\" (echo %errorlevel% & pause) else (cls & echo ==========start & call $fileNameWithoutExt.exe & echo. & echo ==========return : %errorlevel% & pause) & exit"
+    "cpp":"echo off&cd $dir&call g++ $fileName -o $fileNameWithoutExt.exe\nif %errorlevel%==0 (cls&echo ==========start&call $fileNameWithoutExt.exe&echo=&echo ==========return : %errorlevel%&pause&exit) else (echo error:%errorlevel%&pause&exit)"
+	},
+    "editor.detectIndentation": false,
+    "C_Cpp.errorSquiggles": "Enabled",
+    "code-runner.runInTerminal": true
 }
