@@ -1,0 +1,29 @@
+{
+    "fileheader.configObj": {
+        "autoAdd": false,
+        "language": {
+            "languagetest": {
+                "head": "/$$",
+                "middle": " $",
+                "end": " $/"
+            },
+            "js": {
+                "head": "/*",
+                "middle": " $-",
+                "end": "*/"
+            }
+        },
+        "specialOptions":{
+            "Date": "since",
+            "LastEditTime": "lastTime",
+            "LastEditors": "LastAuthor",
+            "Description": "message"
+        }
+    },
+    "fileheader.customMade":{
+        "Author": "FireHumansSkeleton",
+        "Date": "Do not edit",
+        "LastEditTime": "Do not edit",
+        "Mail": "402146748@qq.com"
+    }
+}
