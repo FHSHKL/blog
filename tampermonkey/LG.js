@@ -8,7 +8,15 @@
 function LG_script_init()
 {
 
-    const script_version="7.2.93";
+    const script_version="7.2.94";
+
+    function chat()
+    {
+        console.log("LG-chat");
+        var s=document.createElement("style");
+        s.innerHTML=".message{word-break:break-all;}";
+        document.head.appendChild(s);
+    }
 
     function message()
     {
@@ -194,11 +202,13 @@ function LG_script_init()
             "www.luogu.com.cn":"punch();search_by_name();background();get_user_list();",
             "www.luogu.com.cn/":"punch();search_by_name();background();get_user_list();",
             "match_0":"message();",
-            "match_1":"record();"
+            "match_1":"record();",
+            "match_2":"chat();"
         }
         var match_list=[
             /action=message/ig,
-            /www\.luogu.+\/space\/show/ig
+            /www\.luogu.+\/space\/show/ig,
+            /www\.luogu.+\/chat/ig
         ]
         for(var i=0;i<match_list.length;i++)
         {
