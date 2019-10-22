@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.2.94";
+    const script_version="7.2.96";
 
     function chat()
     {
@@ -16,37 +16,6 @@ function LG_script_init()
         var s=document.createElement("style");
         s.innerHTML=".message{word-break:break-all;}";
         document.head.appendChild(s);
-    }
-
-    function message()
-    {
-        console.log("LG-message");
-        var tim=setInterval(function()
-        {
-            var height=window.innerHeight-document.getElementsByClassName("wrapper wrapped lfe-body header-layout narrow")[0].scrollHeight;
-            var s=document.getElementsByClassName("lg-message-content")[0];
-            if(s==undefined)
-            {
-                return;
-            }
-            s=document.getElementsByClassName("am-input-group am-input-group-sm am-input-group-primary")[0];
-            s.style.top="16px";
-            s.style.position="sticky";
-            s=document.getElementsByClassName("lg-contacts")[0];
-            s.style.overflow="unset";
-            s.style.height="unset";
-            s=document.getElementsByClassName("am-u-md-7")[0].getElementsByClassName("lg-small")[0];s.parentNode.removeChild(s);
-            document.getElementsByClassName("am-u-md-7")[0].getElementsByClassName("lg-article")[0].style.height="100%";
-            document.getElementsByClassName("lg-message-content")[0].style.height="85%";
-            s=document.getElementsByClassName("am-u-md-5")[0];
-            s.style.height=height+"px";
-            s.style.overflowX="hidden";
-            s.style.overflowY="auto";
-            s=document.getElementsByClassName("am-u-md-7")[0];
-            s.style.height=height+"px";
-            
-            clearInterval(tim);
-        },100);
     }
 
     function background()
@@ -71,29 +40,6 @@ function LG_script_init()
             s[i].style.backgroundColor="rgb(255,255,255,.5)";
             s[i].style.padding="5px";
             s[i].style.borderRadius="10px";
-        }
-    }
-
-    function get_user_list()
-    {
-        console.log("LG-users");
-        var sty_box=document.createElement("style");
-        sty_box.innerHTML=".users_cd{position: absolute;display: inline-flex;max-height:100px;overflow-y:scroll;}"+
-        ".users_cd::-webkit-scrollbar{display: none;}"+
-        ".users_cd > div{display: none;course:pointer;}"+
-        ".users_cd > span{background-color:#0e90d2;color:#fff;font-size: 1.4rem;padding:6px 14px 6px 14px;text-align: center;border-radius: 5px;}"+
-        ".users_cd:hover{border:1px solid #ccc;}"+
-        ".users_cd:hover > span{display: none;}"+
-        ".users_cd:hover > div{display: block;}";
-        document.head.appendChild(sty_box);
-        var uid_num=(localStorage.getItem("uid_num")*1)||(0);
-        var s=document.getElementById("user_list");
-        for(var i=0;i<uid_num;i++)
-        {
-            var ch=document.createElement("div");
-            var now=localStorage.getItem("uid_"+i);
-            ch.innerHTML=now;
-            s.appendChild(ch);
         }
     }
 
@@ -197,16 +143,14 @@ function LG_script_init()
             console.log("jQuery已加载");
         }
         var to_do_list={
-            "www.luogu.org":"punch();search_by_name();background();get_user_list();",
-            "www.luogu.org/":"punch();search_by_name();background();get_user_list();",
-            "www.luogu.com.cn":"punch();search_by_name();background();get_user_list();",
-            "www.luogu.com.cn/":"punch();search_by_name();background();get_user_list();",
-            "match_0":"message();",
-            "match_1":"record();",
-            "match_2":"chat();"
+            "www.luogu.org":"punch();search_by_name();background();",
+            "www.luogu.org/":"punch();search_by_name();background();",
+            "www.luogu.com.cn":"punch();search_by_name();background();",
+            "www.luogu.com.cn/":"punch();search_by_name();background();",
+            "match_0":"record();",
+            "match_1":"chat();"
         }
         var match_list=[
-            /action=message/ig,
             /www\.luogu.+\/space\/show/ig,
             /www\.luogu.+\/chat/ig
         ]
