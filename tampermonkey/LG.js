@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.2.96";
+    const script_version="7.2.97";
 
     function chat()
     {
@@ -49,7 +49,7 @@ function LG_script_init()
         document.getElementsByClassName("lg-article lg-index-stat")[0].innerHTML=
         "<h2>题目名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' name='probnamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='probnamesearch'>进入题库界面</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">随机跳题</button>";
         document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
-        "<h2>用户名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<div class=\"users_cd\" id=\"user_list\"><span>常用uid</span></div>";
+        "<h2>用户名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<div class=\"users_cd\" id=\"user_list\"></div>";
         function LG_search_name_slove()
         {
             var username=document.getElementsByName("usernamesearchbox")[0].value;
