@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.3.100";
+    const script_version="7.3.101";
 
     function chat()
     {
@@ -57,13 +57,13 @@ function LG_script_init()
                 "https://www.luogu.org/fe/api/user/search?keyword="+username,
                 function (data)
                 {
-                    var arr = eval('(' + data + ')');
-                    if(arr["users"][0]=="null")
+                    console.log(data);
+                    if(data["users"][0]==null)
                     {
                         show_alert("找不到用户");
                         return;
                     }
-                    var tarid=arr["users"][0].uid;
+                    var tarid=data["users"][0].uid;
                     window.open("https://www.luogu.org/user/"+tarid);
                 }
             );
