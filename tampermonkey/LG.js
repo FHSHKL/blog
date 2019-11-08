@@ -57,7 +57,6 @@ function LG_script_init()
                 "https://www.luogu.org/fe/api/user/search?keyword="+username,
                 function (data)
                 {
-                    console.log(data);
                     if(data["users"][0]==null)
                     {
                         show_alert("找不到用户");
