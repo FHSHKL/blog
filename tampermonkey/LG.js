@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.2.98";
+    const script_version="7.2.99";
 
     function chat()
     {
@@ -48,6 +48,27 @@ function LG_script_init()
         console.log("LG-seanchname");
         document.getElementsByClassName("lg-article lg-index-stat")[0].innerHTML=
         "<h2>题目名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的题目名' name='probnamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='probnamesearch'>进入题库界面</button>&#32;<button class=\"am-btn am-btn-primary am-btn-sm\" name=\"gotorandom\">随机跳题</button>";
+        document.getElementsByClassName("am-u-lg-3 am-u-md-4 lg-right")[0].firstElementChild.innerHTML=
+        "<h2>用户名搜索</h2><p><input type='text' class='am-form-field' placeholder='输入要搜索的用户名' name='usernamesearchbox'></input></p><button class='am-btn am-btn-danger am-btn-sm' name='usernamesearch'>进入用户主页</button>&#32;<div class=\"users_cd\" id=\"user_list\"></div>";
+        function LG_search_name_slove()
+        {
+            var username=document.getElementsByName("usernamesearchbox")[0].value;
+            $.get(
+                "https://www.luogu.org/fe/api/user/search?keyword="+username,
+                function (data)
+                {
+                    var arr = eval('(' + data + ')');
+                    if(s["users"][0]=="null")
+                    {
+                        show_alert("找不到用户");
+                        return;
+                    }
+                    var tarid=arr["users"][0].uid;
+                    window.open("https://www.luogu.org/user/"+tarid);
+                }
+            );
+        }
+
         function LG_search_prob_slove()
         {
             var uprobname=document.getElementsByName("probnamesearchbox")[0].value;
@@ -73,6 +94,8 @@ function LG_script_init()
         $("[name=gotorandom]").click(function () {window.open('/problemnew/show/P' + (parseInt(Math.random(0, 1) * 4503) + 1000));});
         $("[name=probnamesearch]")[0].onclick=function(){LG_search_prob_slove();};
         $("[name=probnamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_prob_slove();}});
+        $("[name=usernamesearch]")[0].onclick=function(){LG_search_name_slove();};
+        $("[name=usernamesearchbox]").keydown(function (e) {if (e.keyCode==13){LG_search_name_slove();}});
     };
 
     function record()
