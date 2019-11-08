@@ -101,7 +101,7 @@ function LG_script_init()
     function record()
     {
         console.log("LG-record-coding");
-        if(location.match(/\/user\/121910/ig)){
+        if(location.href.match(/\/user\/121910/ig)){
             document.getElementsByClassName("user-header-top")[0].style=`background-image: url("https://i.loli.net/2019/08/02/5d43841d41ed869379.jpg");`;
         }
         return;
