@@ -100,9 +100,10 @@ function LG_script_init()
 
     function record()
     {
-        console.log("LG-record");
+        console.log("LG-record-coding");
+        return;
         var uid=parseInt(location.href.replace(/[^0-9|&]/ig,""));
-        var ybt=document.getElementsByClassName("am-btn am-btn-sm am-btn-primary");
+        var ybt=document.getElementsByClassName("dropdown")[0];
 
         var but=document.createElement("a");
         but.setAttribute("href","https://www.luogu.org/record/list?user="+uid);
@@ -151,7 +152,7 @@ function LG_script_init()
             "match_1":"chat();"
         }
         var match_list=[
-            /www\.luogu.+\/space\/show/ig,
+            /www\.luogu.+\/user\//ig,
             /www\.luogu.+\/chat/ig
         ]
         for(var i=0;i<match_list.length;i++)
