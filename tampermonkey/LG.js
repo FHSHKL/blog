@@ -8,7 +8,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.2.99";
+    const script_version="7.3.100";
 
     function chat()
     {
@@ -58,7 +58,7 @@ function LG_script_init()
                 function (data)
                 {
                     var arr = eval('(' + data + ')');
-                    if(s["users"][0]=="null")
+                    if(arr["users"][0]=="null")
                     {
                         show_alert("找不到用户");
                         return;
