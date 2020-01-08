@@ -1,10 +1,3 @@
-/*
- $-Author: FireHumansSkeleton
- $-since: 2019-07-22 08:26:30
- $-lastTime: 2019-09-16 16:33:40
- $-Mail: 402146748@qq.com
-*/
-
 function LG_script_init()
 {
 
