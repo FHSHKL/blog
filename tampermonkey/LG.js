@@ -1,7 +1,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.3.102";
+    const script_version="7.4.104";
 
     function chat()
     {
@@ -134,7 +134,7 @@ function LG_script_init()
         {
             console.log("未检测到jQuery");
             var jq=document.createElement("script");
-            jq.setAttribute("src","https://huokulou.tk/static/js/jquery.js");
+            jq.setAttribute("src","https://firehumansskeleton.github.io/static/js/jquery.js");
             document.head.appendChild(jq);
             console.log("jQuery已加载");
         }
@@ -164,7 +164,7 @@ function LG_script_init()
     {
         console.log("LG-updata");
         localStorage.setItem("LG_script_version",script_version);
-        localStorage.setItem("LG_script",LG_script_init.toString().replace("LG_script_init","LG_load_from_local"));
+        localStorage.setItem("LG_script",LG_script_init.toString().replace("LG_script_init","LG_load_from_local").replace(/  |\n/g,''));
     }
 
     function check_version()
