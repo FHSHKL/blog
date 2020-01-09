@@ -1,7 +1,7 @@
 function LG_script_init()
 {
 
-    const script_version="7.4.104";
+    const script_version="7.4.105";
 
     function chat()
     {
@@ -164,7 +164,7 @@ function LG_script_init()
     {
         console.log("LG-updata");
         localStorage.setItem("LG_script_version",script_version);
-        localStorage.setItem("LG_script",LG_script_init.toString().replace("LG_script_init","LG_load_from_local").replace(/  |\n/g,''));
+        localStorage.setItem("LG_script",LG_script_init.toString().replace("LG_script_init","LG_load_from_local"));
     }
 
     function check_version()
