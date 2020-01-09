@@ -47,7 +47,7 @@ function LG_script_init()
         {
             var username=document.getElementsByName("usernamesearchbox")[0].value;
             $.get(
-                "https://www.luogu.org/fe/api/user/search?keyword="+username,
+                "https://www.luogu.com.cn/fe/api/user/search?keyword="+username,
                 function (data)
                 {
                     if(data["users"][0]==null)
@@ -56,7 +56,7 @@ function LG_script_init()
                         return;
                     }
                     var tarid=data["users"][0].uid;
-                    window.open("https://www.luogu.org/user/"+tarid);
+                    window.open("https://www.luogu.com.cn/user/"+tarid);
                 }
             );
         }
@@ -68,18 +68,18 @@ function LG_script_init()
             var withp=uprobname.match(/(uva|at|poj|cf|sp|u|t|p)/ig);
             if(pid==null)
             {
-                window.open("https://www.luogu.org/problem/list?keyword="+encodeURIComponent(uprobname));
+                window.open("https://www.luogu.com.cn/problem/list?keyword="+encodeURIComponent(uprobname));
             }
             else
             {
                 pid=pid[0].toLocaleUpperCase();
                 if(withp==null)
                 {
-                    window.open("https://www.luogu.org/problem/P"+pid);
+                    window.open("https://www.luogu.com.cn/problem/P"+pid);
                 }
                 else
                 {
-                    window.open("https://www.luogu.org/problem/"+pid);
+                    window.open("https://www.luogu.com.cn/problem/"+pid);
                 }
             }
         }
@@ -101,7 +101,7 @@ function LG_script_init()
         var ybt=document.getElementsByClassName("dropdown")[0];
 
         var but=document.createElement("a");
-        but.setAttribute("href","https://www.luogu.org/record/list?user="+uid);
+        but.setAttribute("href","https://www.luogu.com.cn/record/list?user="+uid);
         but.setAttribute("class","am-btn am-btn-sm am-btn-primary");
         but.setAttribute("target","_blank");
         but.innerHTML="TA的提交";
@@ -139,8 +139,8 @@ function LG_script_init()
             console.log("jQuery已加载");
         }
         var to_do_list={
-            "www.luogu.org":"punch();search_by_name();background();",
-            "www.luogu.org/":"punch();search_by_name();background();",
+            "www.luogu.com.cn":"punch();search_by_name();background();",
+            "www.luogu.com.cn/":"punch();search_by_name();background();",
             "www.luogu.com.cn":"punch();search_by_name();background();",
             "www.luogu.com.cn/":"punch();search_by_name();background();",
             "match_0":"record();",
